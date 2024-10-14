@@ -16,10 +16,10 @@ package-lock.json
 yarn.lock
 
 # Ignore environment variables (never push sensitive information)
-.env
-.env.local
-frontend/.env
-backend/.env
+# .env
+# .env.local
+# frontend/.env
+# backend/.env
 
 # Logs
 logs/
