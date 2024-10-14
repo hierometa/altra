@@ -1,0 +1,165 @@
+/* Modal background overlay */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content */
+.ReactModal__Content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  height: auto;
+  width: 90%;
+  max-width: 600px;
+  /* max-height: 50%; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007BFF;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+button[type="submit"]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:not([type="submit"]) {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+button:not([type="submit"]):hover {
+  background-color: #ddd;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+/* Invoice modal container styles */
+.invoice-modal-container {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Table-like structure for the invoice modal */
+.invoice-modal-table {
+  width: 100%;
+  border-spacing: 0 10px; /* Space between rows */
+}
+
+.invoice-modal-table th, .invoice-modal-table td {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.invoice-modal-table th {
+  font-weight: 600;
+  color: #333;
+  width: 40%;
+}
+
+.invoice-modal-table td {
+  color: #555;
+  width: 60%;
+}
+
+.invoice-modal-header {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.invoice-modal-footer {
+  margin-top: 20px;
+  display: flex;
+  /* justify-content: space-between; */
+  text-align: center;
+}
+
+.invoice-modal-footer button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  /* width: 100%; */
+  /* text-align: center; */
+}
+
+.invoice-modal-footer button:hover {
+  background-color: #0056b3;
+}
+
+.invoice-modal-footer button.cancel-btn {
+  background-color: #DC3545;
+}
+
+.invoice-modal-footer button.cancel-btn:hover {
+  background-color: #b52a3b;
+}

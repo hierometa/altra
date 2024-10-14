@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  # PostgreSQL database
+  postgres:
+    image: postgres:14
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: altametricssecretpassword
+    ports:
+      - "5432:5432"
+  
+  # NestJS backend
+  backend:
+    build: ./backend
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://postgres:altametricssecretpassword@postgres:5432/mydb?schema=public
+      JWT_SECRET: myLi++leSecre+Key
+      FRONTEND_CORS_ORIGIN: http://localhost:5173
+      INVOICE_PER_PAGE_LIMIT: 6
+      TOKEN_EXPIRATION: '30m'
+    volumes:
+      - ./backend:/app
+    ports:
+      - "3000:3000"
+    # Add CORS headers for backend if necessary
+    command: >
+      sh -c "npm run build && npm run seed && npm run start:prod"
+  
+  # Vite frontend
+  frontend:
+    build: ./frontend
+    restart: always
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+    env_file:
+      - ./frontend/.env
+    ports:
+      - "5173:3000" 
+    command: >
+      sh -c "npm run build && serve -s dist"
+
+volumes:
+  postgres_data:
