@@ -9,7 +9,7 @@ frontend/dist/
 backend/dist/
 build/
 frontend/build/
-backend/build/
+# backend/build/
 
 # Ignore lock files (optional, depending on how you manage your package-lock.json or yarn.lock)
 package-lock.json
@@ -50,7 +50,7 @@ coverage/
 test/
 
 # Prisma-related build files
-prisma/migrations/
+# prisma/migrations/
 
 # Docker images or volumes (optional)
 docker-data/

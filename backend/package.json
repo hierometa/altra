@@ -11,7 +11,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prodOG": "node dist/src/main",
+    "start:prodX": "node dist/src/main",
     "start:prod": "npm run prisma:migrate && npm run prisma:generate && node dist/src/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
@@ -20,7 +20,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "seed": "ts-node ./prisma/seed.ts",
-    "postinstall": "npx prisma generate",
+    "postinstallX": "npx prisma generate",
     "prisma:migrate": "npx prisma migrate deploy",
     "prisma:generate": "npx prisma generate"
   },
